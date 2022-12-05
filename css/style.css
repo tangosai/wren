@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+:root {
+	--red: #DC2626;
+	--green: #22C55E;
+	--yellow: #EAB308;
+	--black: #000000;
+	--white: #FFFFFF;
+	--gray: #556987;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+
+}
+
+a:hover {
+	color: var(--black);
+}
+
+.sabtn {
+	display: inline-block;
+	padding: 8px 25px;
+	margin: 0px;
+	border-radius: 100px;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.sabtn-red {
+	background: var(--red);
+	color: var(--white)
+}
+
+.sabtn-green {
+	background: var(--green);
+	color: var(--white)
+}
+
+.sabtn-green:hover {
+	color: var(--white)
+}
+
+.sabtn-yellow {
+	background: var(--yellow);
+	color: var(--black)
+}
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	width: 100%;
+	height: auto;
+	background: var(--white);
+}
+
+#wrapper {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+header {
+	width: 100%;
+	height: auto;
+	padding: 10px 0px;
+}
+
+.logo {
+	width: 200px;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.menu ul {
+	margin-bottom: 0px;
+}
+
+.menu ul li a {
+	display: inline-block;
+	padding: 8px 10px;
+	margin-right: 10px;
+	color: var(--black);
+	font-size: 18px;
+}
+
+.group-buttons .toogle {
+	width: 50px;
+	height: 40px;
+	/*	background: var(--red);*/
+	margin-left: 10px;
+	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+	display: none;
+}
+
+.group-buttons .toogle span {
+	width: 25px;
+	height: 2px;
+	border-radius: 100px;
+	background: var(--black);
+	display: block;
+	position: absolute;
+	top: 18px;
+	left: 7px;
+	transition: 0.3s;
+}
+
+.group-buttons .toogle span:nth-child(1) {
+	transform: translateY(-10px);
+	left: 15px;
+}
+
+.group-buttons .toogle span:nth-child(2) {
+	width: 35px;
+}
+
+.group-buttons .toogle span:nth-child(3) {
+	transform: translateY(10px);
+	left: 15px;
+}
+
+.group-buttons .toogle.active span:nth-child(2) {
+	transform: translateX(100px);
+}
+
+.group-buttons .toogle.active span:nth-child(1) {
+	transform: rotate(45deg);
+}
+
+.group-buttons .toogle.active span:nth-child(3) {
+	transform: rotate(-45deg);
+}
+
+
+
+
+@media only screen and (max-width: 992px) {
+	.menu {
+		position: fixed;
+		width: 290px;
+		height: 100%;
+		background: rgba(255,255,255,0.8);
+		backdrop-filter:blur(7px);
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		transition: 0.3s ease-in-out;
+		transform: translateX(-1000%);
+	}
+	.menu.active{
+		transform: translateX(0%);
+	}
+	.menu ul{
+		flex-direction: column;
+		margin-top: 60px;
+	}
+	.menu ul li a{
+		display: block;
+		margin-right: 0px;
+		border-bottom: 2px solid var(--gray);
+		    padding: 8px 25px;
+	}
+
+	.group-buttons .toogle {
+		display: block;
+	}
+
+	.group-buttons .sabtn {
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+		left: 0px;
+		border-radius: 0px;
+		text-align: center;
+		z-index: 99;
+	}
+}
